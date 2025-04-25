@@ -5,20 +5,25 @@ function loadGraph(network) {
     const edgesVis = []
     for (let index = 0; index < network.length; index++) {
         const edge = network[index]
-        if (getCurrentCapability(edge[0], edge[1], network) > 0) {
-            if (!nodeIds.has(edge[0])) {
-                valueID = countNodes
-                nodeIds.set(edge[0], valueID)
-                countNodes += 1
-                nodesVis.push({id: nodeIds.get(edge[0]), label: edge[0]})
-            } 
-            if (!nodeIds.has(edge[1])) {
-                valueID = countNodes
-                nodeIds.set(edge[1], valueID)
-                countNodes += 1
+        if (!nodeIds.has(edge[0])) {
+            valueID = countNodes
+            nodeIds.set(edge[0], valueID)
+            countNodes += 1
+            nodesVis.push({id: nodeIds.get(edge[0]), label: edge[0]})
+        } 
+        if (!nodeIds.has(edge[1])) {
+            valueID = countNodes
+            nodeIds.set(edge[1], valueID)
+            countNodes += 1
                 nodesVis.push({id: nodeIds.get(edge[1]), label: edge[1]})
             }
+        if (getCurrentCapability(edge[0], edge[1], network) > 0) {
             edgesVis.push({from: nodeIds.get(edge[0]), to: nodeIds.get(edge[1])})
+        }
+        else if (getCurrentCapability(edge[0], edge[1], network) == 0)  {
+            edgesVis.push({
+                from: nodeIds.get(edge[0]), to: nodeIds.get(edge[1]), color: {color: 'red'}
+            })
         }
     }
     const nodes = new vis.DataSet(nodesVis);
@@ -35,7 +40,7 @@ function strikeEdge(edge, network) {
     }
 }
 
-function drawGraph(network, nodes_for_levels=false) {
+function drawGraph(network, nodes_for_levels=false, ) {
     const container = document.getElementById('network_row');
     const grafoDiv = document.createElement('div');
     grafoDiv.id = 'grafo'
@@ -55,7 +60,7 @@ function drawGraph(network, nodes_for_levels=false) {
         },
         edges: {
             arrows: {
-                to: true,
+                to: false,
                 from: false
             },
             color: 'gray',
