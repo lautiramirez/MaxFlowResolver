@@ -1,0 +1,97 @@
+header {
+    width: fit-content; /* o un ancho fijo si lo prefieres */
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.edgeInput {
+    height: 25px;
+    width: 50px;
+    text-align: center;
+}
+
+#edges-container {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.edgeInputsGroup{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: rgb(231, 225, 225);
+    padding: 5px;
+    text-align: center;
+}
+
+.invalid {
+    border-color: red;
+    background-color: #ffe5e5;
+}
+
+#grafo {
+    background-color: rgb(235, 235, 238);
+    height: 350px;
+    width: 600px;
+    border: solid 1px black;
+}
+
+.edgeInfo {
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 20px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(235, 233, 232);
+    justify-content: center;
+    align-items: center;
+}
+
+.edgeInfo p {
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+main {
+    width: fit-content; /* o un valor fijo como 600px */
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+body { 
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button {
+    height: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+#grafo{
+    margin: 10px auto;
+    width: 95%;
+    text-align: center;
+}
+
+#runDinicButton{
+    border: 2px solid #a10404; /* Green */
+    font-size: 15px;
+}

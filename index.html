@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Max Flow Resolver </title>
+        
+        <link rel="stylesheet" href="style.css">
+
+        <!-- vis.js CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+        <!-- vis.js JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+        
+        <!-- Script para crear el grafo y correr Dinic -->
+        <script src="scripts/user_inputs.js"></script>
+        <script src="scripts/draw_graph.js"></script>
+        <script src="scripts/edgesInfo.js"></script>
+        <script src="scripts/dinic.js"></script>
+        
+
+    </head>
+    <body>
+            <header>
+                <h1> Max Flow Resolver </h1>
+                <hr size="1px" color="black" />
+            </header>
+
+            <main>
+                <h2> Ingrese los lados de su vertice: </h2>
+
+                <button onclick="addEdgeInput()"> Añadir lado </button>
+                <br> <br>
+                
+                <div id="edges-container">
+                </div>
+                <br> <br>
+                
+
+                <button id='drawGraphButton' onclick="drawGraphButton()"> Dibujar grafo </button>
+                
+                <button id='runDinicButton' onclick="runDinicButton()">
+                    <b>
+                        Calcular Max Flow Value con Dinic 
+                    </b>
+                </button>
+                
+                <br> <br>
+                <h3> Importar grafo desde archivo .json</h3>
+                <input type="file" id='importJSONGraph' accept=".json">
+                <br> <br>
+                <button id='loadGraphButton' onclick="loadGraphButton()"> Cargar grafo </button>
+                <br> <br>
+                <hr size="1px" color="black" />
+                <div id="network_row">
+                </div>
+
+            </main>
+            <br> <br>
+
+    </body>
+</html>
